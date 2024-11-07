@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block body %}
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> Register Page </title>
+<style>
+Body {
+  font-family: Calibri, Helvetica, sans-serif;
+  background-color: black;
+}
+
+
+ input[type=text], input[type=password] {
+        width: 50%;
+        margin: 8px 0;
+        padding: 12px 20px;
+        display: inline-block;
+        border: 2px solid black;
+        box-sizing: border-box;
+    }
+
+
+ .container {
+        padding: 10px;
+        background-color: ;
+    }
+</style>
+</head>
+
+    <div class="container">
+        {% csrf_token %}
+  <form action = "{% url 'register1' %}" method="post">
+  {% csrf_token %}
+    <center>
+        <h1 style="color:white">REGISTER PAGE</h1><br/>
+    <input type ="text" name ="username" placeholder="Username" required="required"/><br/>
+    <input type ="password" name ="password" placeholder="Password" required="required"/><br/>
+    <input type ="text" name ="email" placeholder="email" required="required"/><br/>
+    <input type ="text" name ="phonenumber" placeholder="phonenumber" required="required"/><br/>
+    <input type ="submit"/>
+
+    </center>
+        <center><h style="color:white">Already exist account <a href="/login">login</a></h></center>
+
+</form>
+    </div>
+{% endblock %}

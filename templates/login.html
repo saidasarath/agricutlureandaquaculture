@@ -1,0 +1,45 @@
+{%extends 'base.html' %}
+{% block body %}
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> Login Page </title>
+<style>
+Body {
+  font-family: Calibri, Helvetica, sans-serif;
+  background-color: black;
+}
+
+
+ input[type=text], input[type=password] {
+        width: 50%;
+        margin: 8px 0;
+        padding: 12px 20px;
+        display: inline-block;
+        border: 2px solid black;
+        box-sizing: border-box;
+    }
+
+
+ .container {
+        padding: 10px;
+        background-color: ;
+    }
+</style>
+</head>
+<div class="container">
+        {% csrf_token %}
+  <form action = "{% url 'login1' %}" method="post">
+  {% csrf_token %}
+
+    <center>
+        <h1 style="color:white">Login PAGE</h1><br/>
+    <input type ="text" name ="email" placeholder="email"/><br/>
+    <input type ="password" name ="password" placeholder="Password"/><br/>
+    <input type ="submit"/>
+
+    </center>
+        <center><h style="color:white">register for login <a href="/register">register</a></h></center>
+
+</form>
+    </div>
+{% endblock %}
